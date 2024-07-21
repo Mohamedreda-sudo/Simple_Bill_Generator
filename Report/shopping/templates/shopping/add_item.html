@@ -1,0 +1,19 @@
+{% extends 'shopping/base.html' %}
+
+{% block title %}Add New Bought Item{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Add New Bought Item</h1>
+<form method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        {{ form.name.label_tag }}
+        {{ form.name }}
+    </div>
+    <div class="form-group">
+        {{ form.price.label_tag }}
+        {{ form.price }}
+    </div>
+    <button type="submit" class="btn btn-primary">Add Item</button>
+</form>
+{% endblock %}
